@@ -1,4 +1,4 @@
-<!--* =================================== 
+ <!--* =================================== 
 <!--*  Event Propagation: 
 <!--* ===================================
 
@@ -84,7 +84,9 @@ Handlers registered for the bubbling phase are executed. -->
         Outer
         <div id="middle">
           Middle
-          <div id="inner">Inner</div>
+          <div id="inner">
+            Inner
+          </div>
         </div>
       </div>
     </section>
@@ -107,6 +109,8 @@ Handlers registered for the bubbling phase are executed. -->
             CurrentTarget: event.currentTarget,
           },
         ]);
+ 
+
       };
 
       const callInner = (event) => {
@@ -117,13 +121,13 @@ Handlers registered for the bubbling phase are executed. -->
             CurrentTarget: event.currentTarget,
           },
         ]);
-        // event.stopPropagation();
+        //event.stopPropagation();
       };
 
       //   By default is the bubbling phase
-      // document.getElementById("outer").addEventListener("click", callOuter);
-      // document.getElementById("middle").addEventListener("click", callMiddle);
-      // document.getElementById("inner").addEventListener("click", callInner);
+    //  document.getElementById("outer").addEventListener("click", callOuter);
+    //  document.getElementById("middle").addEventListener("click", callMiddle);
+    //    document.getElementById("inner").addEventListener("click", callInner);
 
       // To achieve event capturing, you can use the third parameter of the addEventListener method, which specifies whether the event should be captured during the capturing phase. Setting it to true will activate the capturing phase.
       document

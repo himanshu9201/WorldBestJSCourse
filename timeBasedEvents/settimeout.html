@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div class="random">
+    </div>
+ <script>
+
+
+
+let a;
+a = setTimeout (function(){
+ var divRef = document.querySelector('.random');
+ var newPara = document.createElement("p");
+ newPara.textContent = 'hiiiiiiiiiiiiiiiiiiiiiiiiii';
+divRef.appendChild(newPara);
+} ,1000);
+console.log(a);
+
+a = setTimeout (function(){
+ var divRef = document.querySelector('.random');
+ var newPara = document.createElement("p");
+ newPara.textContent = 'hiiiiiiiiiiiiiiiiiiiiiiiiii';
+divRef.appendChild(newPara);
+} ,2000);
+console.log(a);
+let b = setTimeout (function(){
+ var divRef = document.querySelector('.random');
+divRef.remove();
+} ,3000);
+clearTimeout(b);
+ </script>
+
+
+</body>
+</html>

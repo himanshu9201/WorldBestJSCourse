@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<p>typing test</p>
+<p>you find from the local experts about their</p>
+<input class="inputField" type="text" placeholder="start...">
+<div class="output"></div>
+<p class="time"></p>
+<p class="wordsCount"></p>
+<script>
+
+       
+let words ='you find from the local experts about their'
+ words = words.split(' ');
+let currentIndex = -1;
+let wordsCount =0;
+let time = 0;
+let check = true;
+let inputField = document.querySelector('.inputField');
+let output = document.querySelector('.output');
+let timeRef = document.querySelector('.time');
+let wordContent = document.querySelector('.wordsCount');
+let totalKeyStroks = 0;
+let intervalId = null;
+let timeOUTId = null;
+inputField.value = '';
+
+//checking if word we typed is currect or not and updating the value of word count;
+
+function insertValue(){
+
+currentIndex++;
+
+ let value = words[currentIndex];
+let inputFieldvalue = inputField.value;
+
+
+inputFieldvalue = inputFieldvalue.trimStart()
+
+if(value===inputFieldvalue){
+totalKeyStroks = totalKeyStroks +  value.length;
+console.log(totalKeyStroks);
+wordsCount = wordsCount+1
+console.log(wordsCount);
+
+
+
+
+}
+output.textContent=inputField.value;
+  inputField.value ='';
+if(currentIndex === words.length-1){
+  clearInterval(intervalId);
+//changed //////////////////////////////////
+  let wordContentRandom  = Math.round((totalKeyStroks+wordsCount )/
+  5);
+ 
+  let ratio = Math.round(60*wordContentRandom);
+
+  wordContentRandom  =Math.ceil(ratio/time) ;
+     wordContent.textContent =`${ wordContentRandom } WPA`;
+     clearTimeout(timeOUTId);
+  // timeRef.textContent = 'BEFORE TIME';
+}
+
+}
+
+
+//event listner and time interval in this section
+function funCheck(){
+  timeOUTId=setTimeout(() => {
+  clearInterval(intervalId);
+  // timeRef.textContent = 'TIME OUT';
+// let wordContentRandom  = (totalKeyStroks+wordsCount )/5;
+//      wordContent.textContent = wordContentRandom;
+let wordContentRandom  = Math.round((totalKeyStroks+wordsCount )/
+  5);
+ 
+  let ratio = Math.round(60*wordContentRandom);
+
+  wordContentRandom  =Math.ceil(ratio/time) ;
+     wordContent.textContent = wordContentRandom;
+}, 62000);
+}
+
+
+function changetime() {
+    time++;
+  timeRef.textContent = time;  
+}
+
+inputField.addEventListener('keydown', function(event) {
+  
+//  if(check===true){
+//   intervalId = setInterval(changetime, 1000);
+//   check=false;
+// }
+
+if((inputField.value==='' && event.key===' ')||inputField.value===' ' && event.key===' '){
+  inputField.value='';
+  console.log('hehe');
+}
+else{
+  if(check===true){
+  intervalId = setInterval(changetime, 1000);
+  funCheck();
+  check=false;
+}
+}
+
+
+ if(inputField.value!==''){
+  console.log('enpjsh')
+  if(event.key===' '){
+   insertValue();
+   }
+ }
+    // console.log('Key Pressed:', event.key);
+   
+});
+
+
+
+
+</script>
+
+
+</body>
+</html>

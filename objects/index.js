@@ -171,7 +171,7 @@ let person = {
 
 //* =====================================
 //* "this" Object
-//* ======================================
+//* ============================ ==========
 
 //? In JavaScript, the this keyword refers to an object.
 
@@ -201,7 +201,7 @@ let person = {
 
 //todo  Let's check the this keyword values in an object methods
 
-//* Regular Function Expression:
+// * Regular Function Expression:
 // const obj = {
 //   name: "Kodyfier",
 //   greet: function () {
@@ -217,7 +217,7 @@ let person = {
 //   greet() {
 //     console.log(this);
 //   },
-// };
+// }; 
 
 // obj.greet();
 
@@ -248,7 +248,7 @@ let person = {
 // };
 
 //? 1: Object.keys(): Returns an array containing the names of all enumerable own properties of an object.
-
+ 
 // let keys = Object.keys(product);
 // console.log(keys);
 
@@ -286,6 +286,17 @@ let person = {
 
 // const mergedObject = Object.assign({}, target, source);
 // console.log(mergedObject);
+
+
+
+
+
+
+
+
+
+
+
 
 //* ===============================================
 //* Interview Question - Object Manipulation:

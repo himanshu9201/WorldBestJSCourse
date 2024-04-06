@@ -63,9 +63,9 @@
     <script>
       const getListDetails = (event) => {
         const listItem = event.target;
-        listItem.style.transform = "rotateY(360deg)"; // Add a rotation animation
+        listItem.style.transform = "rotateX(360deg)"; // Add a rotation animation
         setTimeout(() => {
-          listItem.style.transform = "rotateY(0deg)"; // Reset rotation after a delay
+          listItem.style.transform = "rotateX(0deg)"; // Reset rotation after a delay
         }, 500);
 
         document.getElementById(

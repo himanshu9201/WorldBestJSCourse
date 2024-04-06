@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tic tac toe</title>
+
+  <style>
+    body{
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF5j6P7B_46wqbnBuWB8w4zHKmjHl9rYiJORQtzmWBfA&s) ;
+    }
+      button{
+       /* height: 80px; */
+       height: 180px;
+       width: 100%;
+       background-color: azure;
+       border: none;
+       font-weight: bolder;
+       font-size: 100px;
+    }
+    .container {
+      background-color: aquamarine;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  /* Adjust the gap between buttons */
+ margin-top: 25px;
+ margin-left: 80px;
+
+
+}
+    
+  
+  </style>
+</head>
+<body>
+<div class="container">
+    <button id="0"></button>
+    <button id="1"></button>
+    <button id="2"></button>
+    <button id="3"></button>
+    <button id="4"></button>
+    <button id="5"></button>
+    <button id="6"></button>
+    <button id="7"></button>
+    <button id="8"></button>
+</div> 
+<script>
+  let container = document.querySelector('.container');
+  let currectButton;
+  let boxelement = { value: true };
+  let array = Array(9).fill('');
+  // console.log(array);
+//insert value inside the buttons 
+function insertValueInsideButton(currectButton){
+          if(boxelement.value===true){
+            currectButton.textContent = 'o';
+            boxelement.value = false;
+        }
+        else{
+          currectButton.textContent = 'x';
+          boxelement.value = true; 
+        }
+        setTimeout(insertValueInsideArray(currectButton),3000);
+}
+function insertValueInsideArray(currectButton){
+  const idNumber  = +currectButton.id;
+  array[idNumber] = currectButton.textContent;
+ let value =currectButton.textContent;
+    checkWin(value);
+  console.log(array);
+}
+function checkWin(value){
+
+
+  function fun1(){
+    array.fill('');
+    const buttons = container.querySelectorAll('button');
+    buttons.forEach(button => {
+     button.textContent='';
+     });
+    }
+
+
+    if((array[0]===value)&&(array[1]===value)&&(array[2]===value)){
+
+
+   setTimeout(fun1(),3000);
+  }
+    
+  
+  else if((array[3]===value)&&(array[4]===value)&&(array[5]===value)){
+    setTimeout(fun1(),3000);
+  }
+  else if((array[6]===value)&&(array[7]===value)&&(array[8]===value)){
+    setTimeout(fun1(),3000);
+  }
+  else if((array[0]===value)&&(array[3]===value)&&(array[6]===value)){
+    setTimeout(fun1(),3000);
+  }
+  else if((array[1]===value)&&(array[4]===value)&&(array[7]===value)){
+    setTimeout(fun1(),3000);
+  }
+  else if((array[2]===value)&&(array[5]===value)&&(array[8]===value)){
+    setTimeout(fun1(),3000);
+  }
+  else if((array[0]===value)&&(array[4]===value)&&(array[8]===value)){
+    setTimeout(fun1(),3000);
+  }
+  else if((array[2]===value)&&(array[4]===value)&&(array[6]===value)){setTimeout(fun1(),3000);
+    }
+  }
+container.addEventListener('click',(event)=>{
+      currectButton =  event.target;
+      if( currectButton.textContent===''){
+          insertValueInsideButton(currectButton);
+      }
+});
+</script>
+
+
+</body>
+</html>

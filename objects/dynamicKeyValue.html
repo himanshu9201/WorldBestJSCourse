@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+// let idType = "collegeID";
+let idType = "schoolID";
+
+let student = {
+  [idType]: "A123456", // Dynamic key based on idType
+  sName: "Vinod",
+  sAge: 29,
+  isStudent: true,
+  greet: function () {
+    console.log(
+      `Hey, my ${idType} is ${student[idType]} and my name is ${student.sName}.`
+    );
+  },
+};
+
+student.greet();
+  </script>
+</body>
+</html>

@@ -79,6 +79,20 @@
       #clock {
         font-size: 9.8rem;
       }
+
+    .button-css{
+      margin-left: 20px;
+      width: 400px;
+      border-radius: 0;
+      border: none;
+      border-width: 0;
+      height: 80px;
+      margin-top: 450px;
+      border-radius: 20px;
+      font-size: 40px;
+     font-family: Arial, Helvetica, sans-serif;
+    background-color:#7DA0CA ;
+    }
     </style>
   </head>
   <body>
@@ -91,24 +105,60 @@
             <i class="far fa-clock" data-title="CountDown"></i>
           </div>
           <div class="mainDiv">
-            <p id="clock"></p>
+            <p id="clock">00:00:00</p>
+        
           </div>
+          
         </div>
+      
       </div>
+
     </div>
-
+    <button class="button-css button-js">START</button>
     <script>
-      const currentTime = () => {
-        let curTime = new Date().toLocaleTimeString();
-        document.getElementById("clock").innerText = curTime;
-      };
-      currentTime();
+      // loop()
+   function loop(){
+    var time = new Date().toLocaleTimeString();
+  document.getElementById('clock').textContent = time;
+   
+   }
 
-      const intervalId = setInterval(() => {
-        currentTime();
-      }, 1000);
 
-      setTimeout(() => clearInterval(intervalId), 5000);
+   let random;
+    var buttonJs = document.querySelector('.button-js');
+    buttonJs.addEventListener('click',()=>{
+    
+      if(   buttonJs.textContent === 'START'){
+        buttonJs.textContent = 'STOP';
+      random = setInterval(loop,1000);
+      // console.log(random)
+      }
+      else{
+       buttonJs.textContent = 'START';
+      // console.log(random)
+        clearInterval(random);
+        document.getElementById('clock').textContent ='00:00:00';
+      }
+     
+      
+    });
     </script>
+
   </body>
 </html>
+
+
+
+
+<!-- 
+const currentTime = () => {
+  let curTime = new Date().toLocaleTimeString();
+  document.getElementById("clock").innerText = curTime;
+};
+currentTime();
+
+const intervalId = setInterval(() => {
+  currentTime();
+}, 1000);
+
+setTimeout(() => clearInterval(intervalId), 5000); -->

@@ -22,7 +22,7 @@
 // new Date(milliseconds)
 
 //? Current date and time
-//? new Date(): Creates a Date object representing the current date and time.
+//?  new Date(): Creates a Date object representing the current date and time.
 // const currentDate = new Date();
 // console.log(currentDate);
 //todo  This is the ISO 8601 format, which is a standard for representing dates and times. In this format, the date and time are represented together, separated by the letter "T". The "Z" at the end indicates that the time is in UTC (Coordinated Universal Time).
@@ -95,7 +95,7 @@
 
 //* ==================================================
 //* JavaScript Set Date Methods / Setting Components:
-//* ===================================================
+ //* ===================================================
 
 // const date = new Date();
 
@@ -194,7 +194,7 @@
 //! Interview Questions
 //! =================
 
-//! 1: Write a function to add a specified number of days to a given date.
+//! 1: Write a f unction to add a specified number of days to a given date.
 
 // const addDaysToDate = (date, extraDay) => {
 //   //   console.log(date);

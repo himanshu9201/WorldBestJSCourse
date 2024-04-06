@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .newClass{
+      display: flex;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <p>TO DO PROJECT </p>
+  <input type="text" placeholder="Enter"
+  class="inputfield">
+  <button class="add-button">Add</button>
+  <div class="works"></div>
+ 
+
+  <script>
+  
+    let listArray = [];
+     let currentElemt = 0;
+
+
+  const  pushtoarray=()=>{
+      var myTextbox = document.querySelector('.inputfield');
+        var textboxValue = myTextbox.value;
+        
+         
+        // myTextbox.value = "";
+        if(textboxValue!==''){
+          listArray.push(textboxValue);
+         currentElemt++;
+         console.log('inside if');
+         myTextbox.value = "";
+        }
+          
+        textboxValue='';
+        myTextbox.value = "";
+       
+       console.log(currentElemt);
+     }
+
+    const addtodolist = ()=>{
+  for( var i = currentElemt-1 ; i<currentElemt;i++ ){
+    if(i>=0){
+      var newDiv = document.createElement("div");
+          newDiv.classList.add("newClass");
+          var newPara = document.createElement("p");
+          newPara.textContent = listArray[i];
+          var newButton = document.createElement("button"); 
+          newButton.textContent = 'Delete';
+          newButton.classList.add('js-delete-button');
+          newDiv.appendChild(newPara);
+          newDiv.appendChild(newButton);
+          parentDiv.appendChild( newDiv);
+    }
+    
+  }
+
+  // console.log(listArray);
+   }
+
+      var temp = document.querySelector('.add-button');
+      temp.addEventListener("click", () => {
+        var myTextbox = document.querySelector('.inputfield');
+        var textboxValue = myTextbox.value;
+        if(textboxValue!==''){
+          pushtoarray();
+          addtodolist();
+        }
+     
+    });
+ 
+
+
+  
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let updatelistarray = (removeTask)=>{
+  let templistArray = [] ;
+  listArray.forEach((element)=>{
+    if(element !== removeTask){
+      templistArray.push(element);
+    }else{
+      currentElemt--;
+    }
+  });
+
+  listArray = [];
+
+  templistArray.forEach((element)=>{
+  
+      listArray.push(element);
+    
+  });
+  console.log(listArray);
+  // currentElemt--;
+  // addtodolist();
+}
+
+
+
+ 
+
+     var parentDiv = document.querySelector('.works');
+    
+    parentDiv.addEventListener('click',(event)=>{
+    var  targetEl = event.target;
+    targetEl.parentElement.remove();
+   var targetRemove = targetEl.previousElementSibling.textContent;
+    updatelistarray(targetRemove);
+    // currentElemt--;
+    console.log(currentElemt);
+    //console.log(targetRemove);
+    targetRemove=null;
+   
+
+    });
+  
+    
+
+
+  </script>
+</body>
+</html>

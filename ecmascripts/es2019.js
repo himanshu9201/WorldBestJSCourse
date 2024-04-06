@@ -15,7 +15,7 @@
 //? flat() is a new array instance method that can create a one-dimensional array from a multidimensional array. (nested arrays into a single, flat array.)
 
 // const nestedArray = [1, 2, [3, 4], 5];
-const nestedArray1 = [1, [2, [3, [4]]], 5];
+// const nestedArray1 = [1, [2, [3, [4]]], 5];
 
 // const flattenedArray = nestedArray.flat();
 // const flattenedArray = nestedArray1.flat(3);

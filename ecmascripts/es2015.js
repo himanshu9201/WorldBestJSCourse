@@ -191,7 +191,7 @@
 
 //* ==========================================
 //*  Destructuring - Modern JavaScript
-//* =========================================
+//* ======================= ==================
 //? Destructuring in JavaScript is a way to extract values from arrays or objects and assign them to variables in a concise and readable manner.
 //? Use Case: Makes code cleaner and avoids repetitive copying of values.
 
@@ -201,7 +201,7 @@
 //? 1: Extracting specific elements:
 const numbers = [10, 20, 30];
 // const first = numbers[0]; // Traditional way
-// const [first, second, third] = numbers;
+ const [first, second, third] = numbers;
 // console.log(second);
 
 //? 2: Ignoring elements:
@@ -257,7 +257,7 @@ const user = { name: "Vinod", age: 30 };
 // fruits.push(...["guava", "grapes"]);
 // console.log(fruits);
 
-//! One more useCases
+ //! One more useCases
 //? In JavaScript, when you spread a string using the spread syntax (...), it converts the string into an array of its individual characters.
 
 //? Traditional way
@@ -286,6 +286,6 @@ const sum = (a, b, ...numbers) => {
 
 console.log(sum(1, 2, 3, 4));
 
-//TODO NOTE: A function definition can only have one rest parameter, and the rest parameter must be the last parameter in the function definition.
+//TODO NOTE: A function definition can only have one rest parameter, and the rest parameter must be the last parameter  in the function definition.
 // function wrong1(...one, ...wrong) {}
 // function wrong2(...wrong, arg2, arg3) {}
